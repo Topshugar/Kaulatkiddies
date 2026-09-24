@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAULATKIDDIES | Brand New Premium Kids - Abuja</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="logo.png">
+</head>
+<body>
 
+<header class="kaulat-header">
+<img src="logo.png" class="kaulat-logo" alt="Kaulatkiddies Gazelle Logo">
+<h1>KAULATKIDDIES</h1>
+<p>BRAND NEW • PREMIUM • ABUJA</p>
+<span class="kaulat-badge">100% BRAND NEW WITH TAG</span>
+</header>
+
+<main class="kaulat-grid" id="kaulatProductGrid">
+<!-- Default products show if admin has not added any yet -->
+<div class="kaulat-card">
+<img src="https://via.placeholder.com/500x500/FFF3C4/111?text=KAULAT+BOY+SET" alt="Boy Set">
+<h3>Kaulat Boy Premium 2-Piece</h3>
+<span>Ages 1-4yrs | Brand New</span>
+<div class="kaulat-price">₦18,500</div>
+<button onclick="addToCart('Kaulat Boy Premium 2-Piece',18500)">Add to Cart</button>
+</div>
+
+<div class="kaulat-card">
+<img src="https://via.placeholder.com/500x500/FFF3C4/111?text=KAULAT+GIRL+DRESS" alt="Girl Dress">
+<h3>Kaulat Luxury Girl Gown</h3>
+<span>Ages 2-5yrs | Brand New</span>
+<div class="kaulat-price">₦22,000</div>
+<button onclick="addToCart('Kaulat Luxury Girl Gown',22000)">Add to Cart</button>
+</div>
+
+<div class="kaulat-card">
+<img src="https://via.placeholder.com/500x500/FFF3C4/111?text=KAULAT+BABY+SET" alt="Baby Set">
+<h3>Kaulat Baby Newborn Set</h3>
+<span>0-12m | Brand New</span>
+<div class="kaulat-price">₦15,000</div>
+<button onclick="addToCart('Kaulat Baby Set',15000)">Add to Cart</button>
+</div>
+
+<div class="kaulat-card">
+<img src="https://via.placeholder.com/500x500/FFF3C4/111?text=KAULAT+SNEAKERS" alt="Sneakers">
+<h3>Kaulat Kids Sneakers</h3>
+<span>Size 19-28 | Brand New</span>
+<div class="kaulat-price">₦16,500</div>
+<button onclick="addToCart('Kaulat Kids Sneakers',16500)">Add to Cart</button>
+</div>
+</main>
+
+<div class="kaulat-cart-bar">
+<div class="kaulat-cart-info">🛒 <b id="kaulatCartCount">0</b> | <b id="kaulatCartTotal">₦0</b></div>
+<div class="kaulat-cart-actions">
+<button class="kaulat-btn-gold" onclick="kaulatCheckout('8055274463')">Order 0805</button>
+<button class="kaulat-btn-white" onclick="kaulatCheckout('8106868833')">Order 0810</button>
+</div>
+</div>
+
+<script src="assets/js/cart.js"></script>
+<script>
+// Final override to ensure kaulat names are used for IDs
+function addToCart(name, price){
+  if(typeof window.kaulatAddToCart === 'function'){
+    window.kaulatAddToCart(name, price);
+  } else {
+    // fallback
+    let cart = JSON.parse(localStorage.getItem('kaulat_cart')||'[]');
+    cart.push({name, price});
+    localStorage.setItem('kaulat_cart', JSON.stringify(cart));
+    const total = cart.reduce((s,i)=>s+i.price,0);
+    document.getElementById('kaulatCartCount').innerText = cart.length;
+    document.getElementById('kaulatCartTotal').innerText = '₦'+total.toLocaleString();
+  }
+}
+function kaulatCheckout(number){
+  const cart = JSON.parse(localStorage.getItem('kaulat_cart')||'[]');
+  if(cart.length===0){ alert('Cart empty'); return; }
+  const items = cart.map(c=>`- ${c.name} - ₦${c.price.toLocaleString()}`).join('%0A');
+  const total = cart.reduce((s,i)=>s+i.price,0);
+  const msg = `Hello Kaulatkiddies!%0A%0AI want BRAND NEW:%0A${items}%0A%0ATotal: ₦${total.toLocaleString()}%0A%0AMy Name:%0AAddress:%0AAge/Size:`;
+  window.open(`https://wa.me/234${number}?text=${msg}`,'_blank');
+}
+</script>
+
+</body>
+  </html>
