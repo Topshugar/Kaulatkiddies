@@ -1,15 +1,22 @@
-I am absolutely thrilled to share a major milestone in my professional journey: the strategic launch of KAULATKIDDIES, a premium ecosystem for next-generation youth lifestyle solutions based in Abuja! 🚀
+## Owner Workflow
+1. Go to `/admin.html`
+2. Login PIN: `1234` (change in assets/js/admin.js)
+3. Add Product: Name, Price, Age/Size, Category, Image (URL or upload)
+4. Click Export -> Download `kaulat_products.json`
+5. Upload `kaulat_products.json` to GitHub repo
+6. Store updates automatically at `/`
 
-We are redefining the market by delivering 100% authentic, brand-new inventory—complete with original tags—ensuring that every family member is aligned with the highest standards of quality and style. Our mission is to empower parents and guardians with a seamless, nationwide distribution network that prioritizes convenience and excellence.
+## Tech
+- Pure HTML/CSS/JS - Works on GitHub Pages
+- No backend - Uses localStorage `kaulat_products` + `kaulat_cart`
+- WhatsApp Checkout via wa.me/23480xxxxxxx
+- Mobile-first: 2 cols mobile, 3 cols desktop
 
-We are excited to offer a curated portfolio across four key verticals:
-- Boys
-- Girls
-- Baby
-- Shoes
+## Naming Convention
+All code uses `kaulat` prefix:
+- IDs: `kaulatProductGrid`, `kaulatCartCount`, `kaulatCartTotal`
+- Classes: `kaulat-card`, `kaulat-price`, `kaulat-header`
+- Storage: `kaulat_products`, `kaulat_cart`
+- Functions: `removeKaulatProduct()`, `kaulatCheckout()`, `loadKaulatProducts()`
 
-Our growth-oriented approach is supported by a dedicated customer success team, reachable via our high-impact WhatsApp channels: 08055274463 and 08106868833.
-
-I invite you to explore our digital flagship and join our community of growth-minded individuals at: https://topshugar.github.io/kaulatkiddies/
-
-Grateful for this new chapter! #KAULATKIDDIES #Abuja #PremiumRetail #GrowthMindset #NewChapter
+© 2026 Kaulatkiddies - Powered by Kaulat Gazelle Method
