@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaulatkiddies Admin</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<div id="loginBox" class="login">
+<img src="logo.png" width="100">
+<h2>KAULATKIDDIES ADMIN</h2>
+<input type="password" id="pin" placeholder="Enter Admin PIN">
+<button onclick="login()">Login</button>
+<p style="font-size:11px;margin-top:10px">Default PIN: 1234 - change in admin.js</p>
+</div>
 
+<div id="adminPanel" style="display:none">
+<header>
+<h3>Owner Dashboard - Brand New Stock</h3>
+<button onclick="logout()">Logout</button>
+</header>
+
+<div class="form">
+<h4>Add New Product</h4>
+<input id="pName" placeholder="Product Name e.g Boy Premium Set">
+<input id="pPrice" type="number" placeholder="Price e.g 18500">
+<input id="pAge" placeholder="Age/Size e.g 1-4yrs">
+<select id="pCat"><option>Boys</option><option>Girls</option><option>Baby</option><option>Shoes</option></select>
+<input id="pImage" placeholder="Image URL or upload below">
+<input type="file" id="fileInput" accept="image/*">
+<button class="save" onclick="addProduct()">+ Add to Store</button>
+</div>
+
+<div class="list">
+<h4>Current Products (<span id="count">0</span>)</h4>
+<div id="productList"></div>
+<button class="export" onclick="exportJSON()">Export products.json for GitHub</button>
+</div>
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+  </html> 
