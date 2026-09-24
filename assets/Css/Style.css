@@ -1,1 +1,33 @@
+/* KAULATKIDDIES - Premium Brand New Store - Abuja */
+:root{
+  --kaulat-gold:#C89B3C;
+  --kaulat-dark:#111;
+  --kaulat-bg:#FFFBF0;
+  --kaulat-border:#f5e6c8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{background:var(--kaulat-bg);color:var(--kaulat-dark);padding-bottom:90px}
 
+/* Header */
+.kaulat-header{background:#fff;text-align:center;padding:32px 20px;border-bottom:3px solid var(--kaulat-gold)}
+.kaulat-logo{width:140px}
+.kaulat-header h1{letter-spacing:5px;color:var(--kaulat-gold);margin-top:10px;font-size:22px}
+.kaulat-header p{letter-spacing:3px;font-size:11px;margin:8px 0}
+.kaulat-badge{background:var(--kaulat-gold);color:#fff;padding:6px 14px;border-radius:20px;font-size:10px;font-weight:800}
+
+/* Product Grid */
+.kaulat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:20px;max-width:1100px;margin:0 auto}
+@media(min-width:768px){.kaulat-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Product Card */
+.kaulat-card{background:#fff;border-radius:18px;padding:12px;border:1px solid var(--kaulat-border);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.kaulat-card img{width:100%;height:230px;object-fit:cover;border-radius:12px}
+.kaulat-card h3{font-size:14px;margin:8px 0 2px}
+.kaulat-card span{font-size:11px;color:#777}
+.kaulat-price{color:var(--kaulat-gold);font-weight:900;font-size:18px;margin:6px 0}
+.kaulat-card button{width:100%;background:var(--kaulat-dark);color:#fff;border:none;padding:11px;border-radius:30px;font-weight:700;cursor:pointer}
+
+/* Cart Bar */
+.kaulat-cart-bar{position:fixed;bottom:0;left:0;right:0;background:var(--kaulat-dark);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;z-index:99}
+.kaulat-btn-gold{background:var(--kaulat-gold);color:#fff;border:none;padding:10px 14px;border-radius:20px;font-weight:800;cursor:pointer}
+.kaulat-btn-white{background:#fff;color:var(--kaulat-dark);border:none;padding:10px 14px;border-radius:20px;font-weight:800;cursor:pointer}
